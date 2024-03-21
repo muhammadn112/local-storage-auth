@@ -27,7 +27,7 @@ function openLoginPopup() {
     var storedPassword = localStorage.getItem('password');
   
     if (username === storedUsername && password === storedPassword) {
-      alert('Login successful!');
+      alert('Login successful!!!!!');
       closePopup();
     } else {
       document.getElementById('loginErrorMessage').innerText = 'Username or password is incorrect.';
