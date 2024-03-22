@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Local Storage Auth</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -18,9 +18,13 @@
         <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
             <h2>Login</h2>
-            <input type="text" id="loginUsername" placeholder="Username">
-            <input type="password" id="loginPassword" placeholder="Password">
-            <button onclick="login()">Login</button>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Username" required data-parsley-errors-container="#loginUsernameError">
+                <div id="loginUsernameError" class="error-message"></div>
+                <input type="password" id="loginPassword" placeholder="Password" required data-parsley-errors-container="#loginPasswordError">
+                <div id="loginPasswordError" class="error-message"></div>
+                <button type="submit">Login</button>
+            </form>
             <div id="loginErrorMessage" class="error-message"></div>
         </div>
     </div>
@@ -29,12 +33,18 @@
         <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
             <h2>Sign Up</h2>
-            <input type="text" id="signupUsername" placeholder="Username">
-            <input type="password" id="signupPassword" placeholder="Password">
-            <button onclick="signUp()">Sign Up</button>
+            <form id="signupForm">
+                <input type="text" id="signupUsername" placeholder="Username" required data-parsley-errors-container="#signupUsernameError">
+                <div id="signupUsernameError" class="error-message"></div>
+                <input type="password" id="signupPassword" placeholder="Password" required data-parsley-errors-container="#signupPasswordError">
+                <div id="signupPasswordError" class="error-message"></div>
+                <button type="submit">Sign Up</button>
+            </form>
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
     <script src="./script.js"></script>
 </body>
 
